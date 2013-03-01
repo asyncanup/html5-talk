@@ -1,0 +1,60 @@
+.nagarroAG-logo {
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 236px;
+    height: 94px;
+    opacity: 0.5;
+    background: url(../images/nagarroAG.png) no-repeat;
+}
+
+.reveal code {
+    max-height: 490px;
+}
+
+span.code {
+    border-bottom: 1px dotted black;
+    font-weight: bold;
+}
+
+/*** Fonts ***/
+
+/* Quicksand */
+@font-face {
+  font-family: 'Quicksand';
+  font-style: normal;
+  font-weight: 400;
+  src: url('fonts/Quicksand-Regular.woff') format('woff');
+}
+@font-face {
+  font-family: 'Quicksand';
+  font-style: normal;
+  font-weight: 700;
+  src: url('fonts/Quicksand-Bold.woff') format('woff');
+}
+
+/* Open Sans */
+@font-face {
+  font-family: 'Open Sans';
+  font-style: normal;
+  font-weight: 400;
+  src: url('fonts/OpenSans.woff') format('woff');
+}
+@font-face {
+  font-family: 'Open Sans';
+  font-style: normal;
+  font-weight: 700;
+  src: url('fonts/OpenSans-Bold.woff') format('woff');
+}
+@font-face {
+  font-family: 'Open Sans';
+  font-style: italic;
+  font-weight: 400;
+  src: url('fonts/OpenSans-Italic.woff') format('woff');
+}
+@font-face {
+  font-family: 'Open Sans';
+  font-style: italic;
+  font-weight: 700;
+  src: url('fonts/OpenSans-BoldItalic.woff') format('woff');
+}
