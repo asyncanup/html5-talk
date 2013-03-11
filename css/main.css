@@ -1,15 +1,73 @@
-.nagarroAG-logo {
+body, body > .reveal {
+  display: none;
+}
+
+.AG-logo {
     position: fixed;
-    top: 0;
-    right: 0;
+    top: -15px;
+    right: -22px;
     width: 236px;
     height: 94px;
     opacity: 0.5;
+    -webkit-transform: scale(0.8);
     background: url(../images/nagarroAG.png) no-repeat;
 }
 
-.reveal code {
-    max-height: 490px;
+.two-face {
+    position: relative;
+    -webkit-transform: rotateY(0deg);
+    -webkit-transform-style: preserve-3d;
+    -webkit-transition: -webkit-transform 0.8s ease;
+}
+.two-face > .face {
+    -webkit-backface-visibility: hidden;
+    width: 100%;
+    margin-bottom: 20px;
+}
+
+.two-face > .face.code {
+    -webkit-transform: rotateY(0deg);
+}
+.two-face > .face.demo {
+    -webkit-transform: rotateY(-180deg);
+    position: absolute;
+}
+.two-face > .face > .inner-container {
+    display: block;
+    position: relative;
+    width: 90%;
+    box-shadow: 0px 0px 6px rgba(0,0,0,0.3);
+}
+.two-face > .face > .inner-container.demo {
+    margin: 0 auto;
+    box-shadow: none;
+}
+.two-face > .face > .inner-container > .content {
+    min-height: 400px;
+    max-height: 500px;
+}
+.two-face > .face > .inner-container.demo > .content {
+    border: 2px solid #888;
+    background: #EDF6F8;
+    width: 100%;
+}
+
+.two-face > .face > .change-face {
+    position: absolute;
+    width: 26px;
+    height: 26px;
+    cursor: pointer;
+    left: -1%;
+}
+.two-face > .face > .change-face.run {
+    background: url(../images/glyphicons/glyphicons_220_play_button.png) no-repeat;
+}
+.two-face > .face > .change-face.edit {
+    background: url(../images/glyphicons/glyphicons_150_edit.png) no-repeat;
+}
+
+p.smaller {
+    font-size: 0.8em;
 }
 
 span.code {
@@ -17,44 +75,92 @@ span.code {
     font-weight: bold;
 }
 
+span.dripping {
+    font-family: "Dripping Blood";
+    color: darkred;
+    font-size: 1.2em;
+}
+
+span.superman {
+    font-family: serif;
+    font-size: 170px;
+    color: #FB0012;
+    text-shadow: -4px 0 black, 0 4px black, 4px 0 black, 0 -4px black;
+}
+span.superman img {
+    border: none;
+    box-shadow: none;
+    height: 170px;
+    vertical-align: middle;
+}
+
+ul.wider li {
+    margin-top:0.4em;
+}
+ul.wider li p {
+    margin-top: 0.2em;
+    font-size: 0.9em;
+}
+ul.wider li li {
+    font-size: 0.8em;
+}
+
+pre .xml .css, pre .xml .javascript {
+    opacity: 1;
+}
+
 /*** Fonts ***/
+/* Dripping Blood */
+@font-face {
+    font-family: "Dripping Blood";
+    font-style: normal;
+    font-weight: 400;
+    src: url("fonts/dripping.ttf") format("truetype");
+}
+/* Super Font */
+@font-face {
+    font-family: "Super Font";
+    font-style: normal;
+    font-weight: 400;
+    src: url("fonts/SuperFont.ttf") format("truetype");
+}
 
 /* Quicksand */
 @font-face {
-  font-family: 'Quicksand';
+  font-family: "Quicksand";
   font-style: normal;
   font-weight: 400;
-  src: url('fonts/Quicksand-Regular.woff') format('woff');
+  src: url("fonts/Quicksand-Regular.woff") format("woff");
 }
 @font-face {
-  font-family: 'Quicksand';
+  font-family: "Quicksand";
   font-style: normal;
   font-weight: 700;
-  src: url('fonts/Quicksand-Bold.woff') format('woff');
+  src: url("fonts/Quicksand-Bold.woff") format("woff");
 }
 
 /* Open Sans */
 @font-face {
-  font-family: 'Open Sans';
+  font-family: "Open Sans";
   font-style: normal;
   font-weight: 400;
-  src: url('fonts/OpenSans.woff') format('woff');
+  src: url("fonts/OpenSans.woff") format("woff");
 }
 @font-face {
-  font-family: 'Open Sans';
+  font-family: "Open Sans";
   font-style: normal;
   font-weight: 700;
-  src: url('fonts/OpenSans-Bold.woff') format('woff');
+  src: url("fonts/OpenSans-Bold.woff") format("woff");
 }
 @font-face {
-  font-family: 'Open Sans';
+  font-family: "Open Sans";
   font-style: italic;
   font-weight: 400;
-  src: url('fonts/OpenSans-Italic.woff') format('woff');
+  src: url("fonts/OpenSans-Italic.woff") format("woff");
 }
 @font-face {
-  font-family: 'Open Sans';
+  font-family: "Open Sans";
   font-style: italic;
   font-weight: 700;
-  src: url('fonts/OpenSans-BoldItalic.woff') format('woff');
+  src: url("fonts/OpenSans-BoldItalic.woff") format("woff");
 }

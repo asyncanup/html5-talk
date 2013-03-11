@@ -1,0 +1,85 @@
+body {
+  font-size: 1.5em;
+  line-height: 1.4;
+}
+
+.bar {
+  color: white;
+  text-align: center;
+  border-bottom: 1px solid white;
+}
+
+.center-it {
+  position: absolute;
+  left: 0;
+  right: 0;
+  margin: 0 auto;
+
+  color: white;
+  text-align: center;
+}
+
+.center-area {
+  position: absolute;
+  left: 0;
+  right: 0;
+  margin: 0 auto;
+
+  width: 400px;
+  height: 400px;
+}
+
+.blue-box {
+  width: 100px;
+  height: 100px;
+  background: steelblue;
+  border: 2px solid white;
+  color: white;
+}
+
+.empty-box {
+  position: absolute;
+  width: 100px;
+  height: 100px;
+  background: steelblue;
+}
+
+.superman {
+  width: 150px; height: 290px;
+  background: #214A95;
+  top: 60px;
+}
+.cape {
+  width: 250px; height: 290px;
+  background: #E20018;
+  top: 30px;
+}
+.tights {
+  width: 70px; height: 45px;
+  background: #A4000C;
+  top: 220px;
+}
+
+.hut {
+  -webkit-transform: rotateY(-30deg);
+  -webkit-transition: -webkit-transform 30s ease;
+  -webkit-transform-style: preserve-3d;
+}
+.hut .roof { width: 40px; height: 130px; }
+.hut .roof.left {
+  -webkit-transform: translate(120px, 65px) skewX(-40deg);
+}
+.hut .roof.right {
+  -webkit-transform: translate(250px, 65px) skewX(40deg);
+}
+.hut .base {
+  -webkit-transform: translate(130px, 175px);
+  width: 150px; height: 170px;
+}
+.hut .bird-plane {
+  background: url(../images/bird-plane.png) no-repeat;
+  background-size: cover;
+
+  position: absolute; width: 666px; height: 300px;
+  -webkit-transform: translate3d(-100px, 40px, 550px) scale(0.33);
+}
