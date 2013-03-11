@@ -27,15 +27,8 @@ CSS3
 * transition
 * animations
 
-Responsive Design
------------------
+Pre-processors
+---
 
-* media queries
-* viewport
-* flex-box
-
-Frameworks
-----------
-
-* animate.css
-* bootstrap
+Best Practices
+---
