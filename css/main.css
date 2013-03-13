@@ -2,6 +2,10 @@ body, body > .reveal {
   display: none;
 }
 
+body > .reveal {
+  font-size: 30px;
+}
+
 .AG-logo {
     position: fixed;
     top: -15px;
@@ -43,8 +47,8 @@ body, body > .reveal {
     box-shadow: none;
 }
 .two-face > .face > .inner-container > .content {
-    min-height: 400px;
-    max-height: 500px;
+    min-height: 300px;
+    max-height: 400px;
 }
 .two-face > .face > .inner-container.demo > .content {
     border: 2px solid #888;
@@ -95,7 +99,7 @@ span.superman img {
 }
 
 ul.wider li {
-    margin-top:0.4em;
+    margin-top:0.3em;
 }
 ul.wider li p {
     margin-top: 0.2em;
