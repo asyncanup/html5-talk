@@ -47,8 +47,8 @@ body > .reveal {
     box-shadow: none;
 }
 .two-face > .face > .inner-container > .content {
-    min-height: 300px;
-    max-height: 450px;
+    min-height: 350px;
+    max-height: 400px;
 }
 .two-face > .face > .inner-container.demo > .content {
     border: 2px solid #888;
