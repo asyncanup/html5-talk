@@ -163,7 +163,7 @@
         ]
     });
 
-    new Remotes("preview")
+    new Remotes("anupbishnoi-nagarro-cssRevisited")
         .on("swipe-left", Reveal.right)
         .on("swipe-right", Reveal.left)
         .on("swipe-up", Reveal.down)
