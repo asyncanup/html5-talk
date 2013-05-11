@@ -163,7 +163,7 @@
         ]
     });
 
-    new Remotes("anupbishnoi-nagarro-cssRevisited")
+    new Remotes("anupbishnoi-nagarro-html5Revisited")
         .on("swipe-left", Reveal.right)
         .on("swipe-right", Reveal.left)
         .on("swipe-up", Reveal.down)
@@ -171,21 +171,4 @@
         .on("tap", function () { changeFace(); })
         .on("hold", Reveal.toggleOverview);
 
-    // FUNCTIONS FOR INDIVIDUAL SLIDES
-    function rotateHut() {
-        var slideKey = currentSlideKey(),
-            iframe = twoFaceContainer[slideKey].find(iframeSelector)[0],
-            hut = iframe && iframe.contentWindow.document.querySelector(".center-area.hut");
-
-        if (hut && hut.style) {
-            var prevTransform = hut.style.WebkitTransform,
-                prevDegreesMatch = prevTransform && prevTransform.match(/rotateY\((\-?\d+)deg\)/),
-                prevDegrees = prevDegreesMatch && +prevDegreesMatch[1];
-            prevDegrees = prevDegrees || 0;
-            hut.style.WebkitTransform = "rotateY(" + (prevDegrees - 721) + "deg)";
-        } else {
-            logger.error("There is no hut!");
-        }
-    }
-    window.rotateHut = rotateHut;
 }());

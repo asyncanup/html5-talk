@@ -79,25 +79,6 @@ span.code {
     font-weight: bold;
 }
 
-span.dripping {
-    font-family: "Dripping Blood";
-    color: darkred;
-    font-size: 1.2em;
-}
-
-span.superman {
-    font-family: serif;
-    font-size: 170px;
-    color: #FB0012;
-    text-shadow: -4px 0 black, 0 4px black, 4px 0 black, 0 -4px black;
-}
-span.superman img {
-    border: none;
-    box-shadow: none;
-    height: 170px;
-    vertical-align: middle;
-}
-
 ul.wider li {
     margin-top:0.3em;
 }
@@ -114,21 +95,6 @@ pre .xml .css, pre .xml .javascript {
 }
 
 /*** Fonts ***/
-/* Dripping Blood */
-@font-face {
-    font-family: "Dripping Blood";
-    font-style: normal;
-    font-weight: 400;
-    src: url("fonts/dripping.ttf") format("truetype");
-}
-/* Super Font */
-@font-face {
-    font-family: "Super Font";
-    font-style: normal;
-    font-weight: 400;
-    src: url("fonts/SuperFont.ttf") format("truetype");
-}
-
 /* Quicksand */
 @font-face {
   font-family: "Quicksand";
