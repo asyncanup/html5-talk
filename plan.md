@@ -1,0 +1,214 @@
+HTML5 Tech Talk
+---------------
+
+# Intro
+
+HTML5 is not the name of a technology,
+it is a set of 3 technologies that are
+undergoing an overhaul simultaneously
+
+HTML5 ~= HTML + JS + CSS
+
+
+# Scenarios
+
+Web page as a document
+    You need nothing more than you needed in 1997 (HTML4 came out)
+
+Web page as an app
+    Welcome aboard!
+
+HTML4 came out in 1997.
+This is 2013.
+
+It's not about what's possible with HTML5,
+it's not about impressing new technologies,
+it's about making an app.
+
+An app needs
+    View Manipulation
+    Interactive User Input
+    Rich Graphics
+    Hardware Access
+    State Management
+    Offline Capability
+    Realtime Communication
+    Accessibility
+    Cross-Platform Support
+
+Cross-Platform Support
+    Desktop
+        Modern Browsers
+        Old IE
+    Mobile
+        WebKit
+        Firefox OS
+        Windows 8
+
+State Management
+    History API
+        pushState
+        popState
+
+View Manipulation
+    DOM Access
+        document.getElementsBy[Id|TagName|ClassName]
+        document.querySelector[All] (Actual CSS selectors, just like jQuery)
+        data- attributes (el.dataset)
+        el.classList[.add|.remove|.toggle|.contains]
+        el.className === el.classList.toString()
+    Semantic Tags
+        header
+        footer
+        nav
+        section
+        article
+        aside
+        figure
+        figcaption
+        time
+        menu
+        command
+        details
+        summary
+        datalist
+
+        meter
+            value
+            min
+            max
+            low
+            high
+            optimum
+        progress
+            value
+            max
+            orient attribute
+            :indeterminate pseudo-class
+        link
+            rel=
+                stylesheet
+                alternate
+                icon
+                pingback
+                prefetch
+                archives
+                external
+                license
+                nofollow
+                tag
+                author
+                bookmark
+                first
+                next
+                prev
+                last
+                up
+                index
+                help
+
+Interactive User Input
+    Form Input
+        input list
+        input type
+            email
+            date
+            range
+            search
+            tel
+            color
+            number
+            x-webkit-speech
+        input required
+        input pattern (regular expression validation)
+    Drag and Drop
+        draggable
+        dragstart
+        dragend
+        dataTransfer
+            .setData
+            .getData
+            .files (for dragging in or out from desktop)
+            .effectAllowed
+        drop event
+
+Accessibility
+    ARIA (Accessible Rich Internet Applications) attributes
+        role
+        aria-labelledby
+        aria-checked
+        aria-disabled
+        aria-grabbed
+    Microdata (http://www.google.com/webmasters/tools/richsnippets) attributes
+        itemscope
+        itemtype
+        itemprop
+
+Rich Graphics
+    CSS3!
+    Native Audio/Video
+    Streaming Possibilities
+    Canvas
+    WebGL (Canvas 3D)
+    SVG (Inline + Importing a file)
+    CSS Shaders
+
+Offline Capability
+    navigator.[onLine|offLine]
+    Web Storage
+        localStorage.[get|set]Item (synchronous)
+    Web SQL
+        openDatabase
+        transaction
+        executeSql
+    IndexedDB (key-value store)
+        indexedDB.open
+        onsuccess
+        transaction
+        objectStore
+        openCursor
+    Application Cache
+        manifest
+        .appcache
+        applicationCache.status
+        updateready
+        applicationCache.swapCache
+
+Realtime Communication
+    WebSocket
+        new WebSocket (ws://)
+            .onopen
+            .onmessage
+            .onclose
+            .send
+        WebSocket Secure (wss://)
+    Web Workers
+        new Worker
+            .onmessage
+            .postMessage
+    Push Notifications
+        Desktop
+            webkitNotifications
+                .checkPermission
+                .requestPermission
+                .createNotification
+        Mobile
+            Phonegap, etc
+
+Hardware Access
+    File System Access
+        new FileReader()
+            .readAsDataURL
+        requestFileSystem
+            fs.root.getFile
+            file.createWriter
+            writer
+                .write
+                .onwrite
+                .onerror
+    navigator.geolocation
+        .getCurrentPosition
+    deviceorientation
+        .alpha
+        .beta
+        .gamma
