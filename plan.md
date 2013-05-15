@@ -10,40 +10,23 @@ undergoing an overhaul simultaneously
 HTML5 ~= HTML + JS + CSS
 
 
-# Scenarios
+# Why HTML5?
 
-Web page as a document
-    You need nothing more than you needed in 1997 (HTML4 came out)
+It's not about what's possible in the latest browsers.
+It's not about impressive new technologies.
 
-Web page as an app
-    Welcome aboard!
+It's about making an app.
 
-HTML4 came out in 1997.
-This is 2013.
-
-It's not about what's possible with HTML5,
-it's not about impressing new technologies,
-it's about making an app.
-
-An app needs
-    View Manipulation
-    Interactive User Input
-    Rich Graphics
-    Hardware Access
-    State Management
-    Offline Capability
-    Realtime Communication
-    Accessibility
-    Cross-Platform Support
-
+# An app needs
+View Manipulation
+Interactive User Input
+Rich Graphics
+Hardware Access
+State Management
+Offline Capability
+Realtime Communication
+Accessibility
 Cross-Platform Support
-    Desktop
-        Modern Browsers
-        Old IE
-    Mobile
-        WebKit
-        Firefox OS
-        Windows 8
 
 State Management
     History API
@@ -212,3 +195,12 @@ Hardware Access
         .alpha
         .beta
         .gamma
+
+Cross-Platform Support
+    all browsers
+    node webkit appjs
+    windows 8
+    chrome app
+    adobe air
+
+Shadow DOM

@@ -111,12 +111,12 @@
             if (backFace.attr("src") !== backFace.attr("data-src")) {
                 backFace.attr("src", backFace.attr("data-src"));
 
-                backFace.fadeOut();
-                showSpinner();
-                $(backFace).load(function () {
-                    hideSpinner();
-                    backFace.fadeIn();
-                });
+                //backFace.hide();
+                //showSpinner();
+                //$(backFace).load(function () {
+                    //hideSpinner();
+                    //backFace.fadeIn();
+                //});
             }
         }
     }
@@ -134,7 +134,7 @@
             slideKey = slideKey || currentSlideKey();
 
             var backFace = backFaceContainer[slideKey];
-            console.log("destroyed backFace for", slideKey);
+            //console.log("destroyed backFace for", slideKey);
         }
     }
 

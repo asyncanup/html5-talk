@@ -24,6 +24,48 @@ body > .reveal {
     z-index: 100;
 }
 
+.html5-logo {
+    height: 600px;
+    width: 500px;
+    float: left;
+    background: url(../images/html5logo.png) no-repeat;
+    -webkit-transform: scale(0.8);
+}
+
+.about-slide {
+    position: relative;
+    top: 100px;
+}
+
+.vertical-space {
+    height: 100px;
+}
+
+.reveal section {
+    height: 90%;
+}
+
+.reveal section > article {
+    position: relative;
+}
+
+span.red {
+    color: darkred;
+}
+
+.reveal section > article.small {
+    top: 20%;
+}
+
+.reveal section > article.mid {
+    top: 10%;
+}
+
+.reveal section > .section-head {
+    position: relative;
+    top: 40%;
+}
+
 .two-face {
     position: relative;
     -webkit-transform: rotateY(0deg);
@@ -59,6 +101,7 @@ body > .reveal {
 .two-face > .face > .inner-container.back > .content {
     min-height: 500px;
     width: 100%;
+    max-width: 100%;
 }
 
 .two-face > .face > .change-face {
