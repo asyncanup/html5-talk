@@ -1,9 +1,5 @@
-body, body > .reveal {
-  display: none;
-}
-
 body > .reveal {
-  font-size: 26px;
+  /*font-size: 26px;*/
 }
 
 .AG-logo {
@@ -17,6 +13,17 @@ body > .reveal {
     background: url(../images/nagarroAG.png) no-repeat;
 }
 
+.spinner {
+    position: fixed;
+    display: none;
+    top: 50%;
+    left: 50%;
+    background: url(../images/spinner.gif) no-repeat;
+    height: 30px;
+    width: 30px;
+    z-index: 100;
+}
+
 .two-face {
     position: relative;
     -webkit-transform: rotateY(0deg);
@@ -27,14 +34,14 @@ body > .reveal {
     -webkit-backface-visibility: hidden;
     width: 100%;
     margin-bottom: 20px;
+    position: absolute;
 }
 
-.two-face > .face.code {
+.two-face > .face.front {
     -webkit-transform: rotateY(0deg);
 }
-.two-face > .face.demo {
+.two-face > .face.back {
     -webkit-transform: rotateY(-180deg);
-    position: absolute;
 }
 .two-face > .face > .inner-container {
     display: block;
@@ -42,17 +49,15 @@ body > .reveal {
     width: 90%;
     box-shadow: 0px 0px 6px rgba(0,0,0,0.3);
 }
-.two-face > .face > .inner-container.demo {
+.two-face > .face > .inner-container.back {
     margin: 0 auto;
     box-shadow: none;
-}
-.two-face > .face > .inner-container > .content {
-    min-height: 350px;
-    max-height: 400px;
-}
-.two-face > .face > .inner-container.demo > .content {
     border: 2px solid #888;
     background: #EDF6F8;
+    min-height: 500px;
+}
+.two-face > .face > .inner-container.back > .content {
+    min-height: 500px;
     width: 100%;
 }
 
@@ -61,13 +66,17 @@ body > .reveal {
     width: 26px;
     height: 26px;
     cursor: pointer;
-    left: -1%;
+    left: -2%;
 }
 .two-face > .face > .change-face.run {
     background: url(../images/glyphicons/glyphicons_220_play_button.png) no-repeat;
 }
-.two-face > .face > .change-face.edit {
-    background: url(../images/glyphicons/glyphicons_150_edit.png) no-repeat;
+.two-face > .face > .change-face.go-back {
+    background: url(../images/glyphicons/glyphicons_221_unshare.png) 25% 42% no-repeat;
+    padding: 2px;
+    border: 5px solid black;
+    border-radius: 20px;
+    -webkit-transform: scale(0.6);
 }
 
 p.smaller {
@@ -88,10 +97,6 @@ ul.wider li p {
 }
 ul.wider li li {
     font-size: 0.8em;
-}
-
-pre .xml .css, pre .xml .javascript {
-    opacity: 1;
 }
 
 /*** Fonts ***/

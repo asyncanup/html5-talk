@@ -1,13 +1,148 @@
 (function () {
     /*globals Reveal:false, hljs:false */
 
-    var snippet          = window.snippet          = {},
-        twoFaceContainer = window.twoFaceContainer = {},
-        currentFace      = window.currentFace      = {},
-        currentRotation  = window.currentRotation   = {};
+    var FRONT = "front",
+        BACK = "back";
 
-    var iframeSelector = ".inner-container.demo > iframe.content";
+    var twoFaceContainer   = window.twoFaceContainer   = {},
+        frontFaceContainer = window.frontFaceContainer = {},
+        backFaceContainer  = window.backFaceContainer  = {},
+        currentFace        = window.currentFace        = {},
+        currentRotation    = window.currentRotation    = {},
+        demoIframeSrc      = window.demoIframeSrc      = {},
+        demoSelector       = window.demoSelector       = {};
 
+    var iframeSelector = ".inner-container." + BACK + " > iframe.content";
+
+    window.changeFace = changeFace;
+    window.changeAllFaces = changeAllFaces;
+
+    setupHandlers();
+    setupRemote();
+    setupReveal();
+
+    function setupHandlers() {
+        $(document).ready(function () {
+            $(".two-face .face .change-face").click(function () {
+                changeFace();
+            });
+
+            $(".two-face").each(function () {
+                var container = $(this),
+                    slideKey = slideKeyFromBlock(container),
+                    frontFace = container.find(".inner-container " + FRONT),
+                    backFace = container.find(".inner-container." + BACK + " iframe");
+
+                twoFaceContainer[slideKey] = container;
+                frontFaceContainer[slideKey] = frontFace;
+                backFaceContainer[slideKey] = backFace;
+                currentFace[slideKey] = FRONT;
+                currentRotation[slideKey] = 0;
+            });
+
+            $("body").show();
+            if ($.browser.chrome || $.browser.webkit) {
+                $("body > .reveal").fadeIn("slow");
+            } else {
+                logger.error("Please use a webkit browser (Chrome / Safari)");
+            }
+        });
+    }
+
+    function setupReveal() {
+        Reveal.initialize({
+            controls: true,
+            progress: true,
+            history: true,
+            center: false,
+
+            keyboard: true,
+            overview: true,
+            loop: false,
+            rtl: false,
+            autoSlide: 0,
+            rollingLinks: true,
+
+            theme: "sky",
+            transition: "default"
+        });
+    }
+
+    function setupRemote(yes) {
+        if (yes) {
+            new window.Remotes("anupbishnoi-nagarro-html5Revisited")
+                .on("swipe-left", Reveal.right)
+                .on("swipe-right", Reveal.left)
+                .on("swipe-up", Reveal.down)
+                .on("swipe-down", Reveal.up)
+                .on("tap", function () { changeFace(); })
+                .on("hold", Reveal.toggleOverview);
+        }
+    }
+
+    // Core changeFace function that shows the other side of the current (or passed in) slide
+    function changeFace(slideKey, keepSameDirectionOfRotation) {
+        slideKey = slideKey || currentSlideKey();
+
+        var oldFace = currentFace[slideKey],
+            newFace = oldFace === FRONT ? BACK : FRONT,
+            container = twoFaceContainer[slideKey],
+            oldRotation = currentRotation[slideKey],
+            newRotation = keepSameDirectionOfRotation ?
+                oldRotation - 180 :
+                oldFace === FRONT ?
+                    oldRotation - 180 :
+                    oldRotation + 180;
+
+        currentFace[slideKey] = newFace;
+        currentRotation[slideKey] = newRotation;
+
+        container.css("-webkit-transform", rotationCssFromDegree(newRotation));
+
+        initFace(newFace, slideKey);
+        destroyFace(oldFace, slideKey);
+    }
+
+    function initFace(newFace, slideKey) {
+        if (newFace === BACK) {
+            slideKey = slideKey || currentSlideKey();
+
+            var backFace = backFaceContainer[slideKey];
+            if (backFace.attr("src") !== backFace.attr("data-src")) {
+                backFace.attr("src", backFace.attr("data-src"));
+
+                backFace.fadeOut();
+                showSpinner();
+                $(backFace).load(function () {
+                    hideSpinner();
+                    backFace.fadeIn();
+                });
+            }
+        }
+    }
+
+    function showSpinner() {
+        $(".spinner").fadeIn("slow");
+    }
+
+    function hideSpinner() {
+        $(".spinner").fadeOut("fast");
+    }
+
+    function destroyFace(oldFace, slideKey) {
+        if (oldFace === BACK) {
+            slideKey = slideKey || currentSlideKey();
+
+            var backFace = backFaceContainer[slideKey];
+            console.log("destroyed backFace for", slideKey);
+        }
+    }
+
+    function changeAllFaces() {
+        Object.keys(twoFaceContainer).forEach(changeFace);
+    }
+
+    // Helpers
     function degreeFromRotationCss(css) {
         try {
             return +css.match(/rotateY\((\-?\d)deg\)/)[1];
@@ -19,41 +154,6 @@
     function rotationCssFromDegree(deg) {
         return "rotateY(" + deg + "deg)";
     }
-
-    function changeFace(slideKey) {
-        slideKey = slideKey || currentSlideKey();
-        if (!twoFaceContainer[slideKey]) {
-            logger.error("This slide has no code");
-            return;
-        }
-
-        var oldFace = currentFace[slideKey],
-            newFace = oldFace === "code" ? "demo" : "code",
-            container = twoFaceContainer[slideKey],
-            oldRotation = currentRotation[slideKey],
-            // to make the two-face rotate in the same direction:
-            //newRotation = oldRotation - 180;
-            // to have it go into demo mode and come back:
-            newRotation = oldFace === "code" ? oldRotation - 180 : oldRotation + 180;
-
-        currentFace[slideKey] = newFace;
-        currentRotation[slideKey] = newRotation;
-
-        if (newFace === "demo") {
-            twoFaceContainer[slideKey]
-                .find(iframeSelector)
-                .contents()
-                .find("body")
-                .html(snippet[slideKey]);
-        }
-        container.css("-webkit-transform", rotationCssFromDegree(newRotation));
-    }
-    window.changeFace = changeFace;
-
-    function changeAllFaces() {
-        Object.keys(twoFaceContainer).forEach(changeFace);
-    }
-    window.changeAllFaces = changeAllFaces;
 
     function makeSlideKey(indices) {
         return String(indices.h) + "/" + String(indices.v);
@@ -69,50 +169,6 @@
             h = (hSection.length && hSection.index()) || 0,
             v = (vSection.length && vSection.index()) || 0;
         return makeSlideKey({ h: h, v: v });
-    }
-
-    function highlightLoaded() {
-        $(document).ready(function () {
-            $(".two-face .face .change-face").click(function () {
-                changeFace();
-            });
-
-            $(".two-face").each(function () {
-                var container = $(this),
-                    slideKey = slideKeyFromBlock(container),
-                    codeBlock = container.find(".inner-container code"),
-                    demoFrame = container.find(".inner-container.demo iframe");
-
-                twoFaceContainer[slideKey] = container;
-
-                // html encode the block contents into strings
-                // (because they've been put in as html tags in the source)
-                codeBlock.text(codeBlock.html().trim());
-
-                snippet[slideKey] = codeBlock.text();
-                currentFace[slideKey] = "code";
-                currentRotation[slideKey] = 0;
-
-                codeBlock.on("focusout", function () {
-                    snippet[slideKey] = codeBlock.text();
-                });
-
-                hljs.highlightBlock(codeBlock[0]);
-
-                demoFrame.contents().find("head")
-                    .append("<link rel='stylesheet' href='lib/css/reset.css'>")
-                    //.append("<link rel='stylesheet' href='lib/css/bootstrap.css'>")
-                    .append("<link rel='stylesheet' href='css/demo-iframe.css'>");
-            });
-
-            // show body once the slides' custom code has been parsed
-            $("body").show();
-            if ($.browser.chrome || $.browser.webkit) {
-                $("body > .reveal").fadeIn("slow");
-            } else {
-                logger.error("Please use a webkit browser (Chrome / Safari)");
-            }
-        });
     }
 
     var humane = window.humane;
@@ -132,43 +188,5 @@
         addnCls: "humane-jackedup-info",
         timeout: 1000
     });
-
-    Reveal.initialize({
-        controls: true,
-        progress: true,
-        history: true,
-        center: true,
-
-        keyboard: true,
-        overview: true,
-        loop: false,
-        rtl: false,
-        autoSlide: 0,
-        rollingLinks: true,
-
-        theme: "sky",
-        transition: "default",
-
-        // Optional libraries used to extend on reveal.js
-        dependencies: [
-            {
-                src: "lib/js/classList.js",
-                condition: function () { return !document.body.classList; }
-            },
-            {
-                src: "plugin/highlight/highlight.js",
-                async: true,
-                callback: highlightLoaded
-            }
-        ]
-    });
-
-    new Remotes("anupbishnoi-nagarro-html5Revisited")
-        .on("swipe-left", Reveal.right)
-        .on("swipe-right", Reveal.left)
-        .on("swipe-up", Reveal.down)
-        .on("swipe-down", Reveal.up)
-        .on("tap", function () { changeFace(); })
-        .on("hold", Reveal.toggleOverview);
 
 }());

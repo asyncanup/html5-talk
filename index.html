@@ -18,13 +18,10 @@
     <!-- For Humane notifications -->
     <link rel="stylesheet" href="lib/css/jackedup.css">
 
-    <!-- For syntax highlighting -->
-    <link rel="stylesheet" href="lib/css/zenburn.css">
-
     <!-- My custom styles -->
     <link rel="stylesheet" href="css/main.css">
 
-    <!-- If the query includes 'print-pdf', use the PDF print sheet -->
+    <!-- If the query includes "print-pdf", use the PDF print sheet -->
     <script>
       document.write( '<link rel="stylesheet" href="lib/css/print/' + ( window.location.search.match( /print-pdf/gi ) ? 'pdf' : 'paper' ) + '.css" type="text/css" media="print">' );
     </script>
@@ -36,6 +33,7 @@
 
   <body>
     <div class="AG-logo"></div>
+    <div class="spinner"></div>
 
     <div class="reveal">
 
@@ -51,6 +49,27 @@
           </p>
         </section>
 
+        <section>
+          <h3>Selectors</h3>
+          <div class="two-face">
+            <div class="face front">
+              <div class="change-face run" title="See Demo"></div>
+              <ul class="wider">
+                <li>Yo</li>
+              </ul>
+            </div>
+            <div class="face back">
+              <div class="change-face go-back" title="Back to Slide"></div>
+              <div class="inner-container back">
+                <iframe class="content"
+                    data-src="http://html5demos.com/dnd-upload"
+                    data-selector="">
+                </iframe>
+              </div>
+            </div>
+          </div>
+        </section>
+
         <section data-state="soothe">
           <h1>THE END</h1>
         </section>
@@ -58,15 +77,15 @@
       </div>
     </div>
 
-    <script src="lib/js/head.min.js"></script>
-    <script src="lib/js/reveal.js"></script>
-    <script src="lib/js/jquery.js"></script>
+    <script src="lib/js/reveal.min.js"></script>
+    <script src="lib/js/humane.min.js"></script>
+    <script src="lib/js/underscore.min.js"></script>
+    <script src="lib/js/jquery.min.js"></script>
     <script src="lib/js/jquery.browser.js"></script>
-    <script src="lib/js/humane.js"></script>
 
     <!--<script src="https://raw.github.com/Remotes/Remotes/master/dist/remotes.ne.min.js"></script>-->
 
-    <script type="text/javascript" src="js/main.js"></script>
+    <script src="js/main.js"></script>
 
   </body>
 </html>
