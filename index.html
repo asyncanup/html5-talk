@@ -270,8 +270,7 @@
         </section>
 
         <section>
-          <h3><a target="_blank"
-            href="http://www.roughregister.com/public/talks/css">CSS3!</a></h3>
+          <h3>CSS3!</h3>
           <div class="two-face">
             <div class="face front">
               <div class="change-face run"
@@ -812,19 +811,36 @@
 
         <section>
           <h3>Web Sockets</h3>
-          <article class="mid">
+          <article>
             <ul class="wider">
               <li><span class="code">new WebSocket</span> (ws://)</li>
               <li><span class="code">webSocket.onopen</span></li>
               <li><span class="code">webSocket.onmessage</span></li>
               <li><span class="code">webSocket.send</span></li>
               <li><span class="code">webSocket.onclose</span></li>
-              <br>
               <li>WebSocket Secure (wss://)</li>
             </ul>
             <br><br>
-            <p>Check out <a href="http://socket.io/">Socket.IO</a></p>
+            <p>Check out <a target="_blank" href="http://socket.io/">Socket.IO</a></p>
+            <p>This presentation's remote is <br>
+              working on WebSocket</p>
           </article>
+        </section>
+
+        <section>
+          <h3>Web Workers</h3>
+          <br>
+          <p>Multi-threading in JavaScript!</p>
+          <ul class="wider">
+            <li><span class="code">new Worker</span></li>
+            <li><span class="code">message</span> event on <span class="code">worker</span></li>
+            <li><span class="code">worker.postMessage</span></li>
+            <br>
+            <li>Can only pass serializable data</li>
+            <li>No <span class="code">window</span> in <span class="code">worker</span> context,
+              but <span class="code">self</span></li>
+            <li>Communication only by <span class="code">message</span> events</li>
+          </ul>
         </section>
 
         <section data-state="soothe">
@@ -885,11 +901,34 @@
           <h4>Do we still have time?</h4>
         </section>
 
+        <section>
+          <h3><a target="_blank"
+            href="http://www.html5rocks.com/en/tutorials/streaming/screenshare/">One last fun thing</a></h3>
+          <div class="two-face">
+            <div class="face front">
+              <div class="change-face run"
+                title="Demo Source - https://html5-demos.appspot.com/static/getusermedia/screenshare.html"></div>
+              <h2 style="margin-top: 200px">Screen Capturing!</h2>
+            </div>
+            <div class="face back">
+              <div class="change-face go-back" title="Back to Slide"></div>
+              <div class="inner-container back">
+                <iframe class="content"
+                    data-src="https://html5-demos.appspot.com/static/getusermedia/screenshare.html">
+                </iframe>
+              </div>
+            </div>
+          </div>
+        </section>
+
         <section data-state="soothe">
-          <h1>THE END</h1>
+          <h1 style="margin-top: -50px">THE END</h1>
           <br>
           <h4>This presentation is available at:</h4>
-          <p>http://roughregister.com/public/talks/html5</p>
+          <p><a target="_blank"
+            href="http://roughregister.com/public/talks/html5">
+              http://roughregister.com/public/talks/html5
+          </a></p>
         </section>
 
       </div>
