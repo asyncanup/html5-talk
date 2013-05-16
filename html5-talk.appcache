@@ -14,6 +14,7 @@ lib/js/reveal.min.js
 lib/js/humane.min.js
 lib/js/jquery.min.js
 lib/js/jquery.browser.js
+lib/js/remotes.js
 js/main.js
 
 # Fonts
