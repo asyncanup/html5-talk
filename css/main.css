@@ -114,7 +114,7 @@ a.cool-button.active {
     top: 10%;
 }
 
-.reveal section > .section-head {
+[data-state="soothe"] > * {
     position: relative;
     top: 40%;
 }
