@@ -18,7 +18,7 @@
     window.changeAllFaces = changeAllFaces;
 
     setupHandlers();
-    setupRemote(true);
+    setupRemote();
     setupReveal();
 
     function setupHandlers() {
@@ -103,8 +103,8 @@
         });
     }
 
-    function setupRemote(yes) {
-        if (yes) {
+    function setupRemote() {
+        if (window.Remotes) {
             new window.Remotes("anupbishnoi-nagarro-html5Revisited")
                 .on("swipe-left", Reveal.right)
                 .on("swipe-right", Reveal.left)
