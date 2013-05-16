@@ -21,7 +21,7 @@ It's about making an app.
 View Manipulation
 Interactive User Input
 Rich Graphics
-Hardware Access
+File / Hardware Access
 State Management
 Offline Capability
 Realtime Communication
@@ -47,48 +47,12 @@ View Manipulation
         section
         article
         aside
-        figure
-        figcaption
         time
         menu
-        command
-        details
-        summary
-        datalist
-
         meter
-            value
-            min
-            max
-            low
-            high
-            optimum
         progress
-            value
-            max
-            orient attribute
-            :indeterminate pseudo-class
-        link
-            rel=
-                stylesheet
-                alternate
-                icon
-                pingback
-                prefetch
-                archives
-                external
-                license
-                nofollow
-                tag
-                author
-                bookmark
-                first
-                next
-                prev
-                last
-                up
-                index
-                help
+
+        datalist
 
 Interactive User Input
     Form Input
@@ -114,6 +78,9 @@ Interactive User Input
             .files (for dragging in or out from desktop)
             .effectAllowed
         drop event
+    User Media (Webcam)
+        getUserMedia
+    User Media (Mic Audio)
 
 Accessibility
     ARIA (Accessible Rich Internet Applications) attributes
@@ -129,12 +96,16 @@ Accessibility
 
 Rich Graphics
     CSS3!
+        http://www.roughregister.com/public/guess-the-king
+        http://www.roughregister.com/public/envelope
+    JS Animations
+        requestAnimationFrame
     Native Audio/Video
-    Streaming Possibilities
+        http://www.htmlfivewow.com/slide64
     Canvas
+        http://www.htmlfivewow.com/slide52
     WebGL (Canvas 3D)
     SVG (Inline + Importing a file)
-    CSS Shaders
 
 Offline Capability
     navigator.[onLine|offLine]
@@ -178,8 +149,9 @@ Realtime Communication
         Mobile
             Phonegap, etc
 
-Hardware Access
+File / Hardware Access
     File System Access
+        http://www.htmlfivewow.com/demos/terminal/terminal.html
         new FileReader()
             .readAsDataURL
         requestFileSystem
@@ -204,3 +176,6 @@ Cross-Platform Support
     adobe air
 
 Shadow DOM
+Screen Sharing!
+    https://html5-demos.appspot.com/static/getusermedia/screenshare.html
+CSS Shaders

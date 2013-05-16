@@ -46,6 +46,16 @@
             } else {
                 logger.error("Please use a webkit browser (Chrome / Safari)");
             }
+
+            var files = document.querySelectorAll(".dragout"), i;
+            function setDownloadUrl(file) {
+                file.addEventListener("dragstart", function (e) {
+                    e.dataTransfer.setData("DownloadURL", this.dataset.downloadurl);
+                }, false);
+            }
+            for (i = 0; i < files.length; ++i) {
+                setDownloadUrl(files[i]);
+            }
         });
     }
 
@@ -61,7 +71,7 @@
             loop: false,
             rtl: false,
             autoSlide: 0,
-            rollingLinks: true,
+            rollingLinks: false,
 
             theme: "sky",
             transition: "default"
@@ -121,21 +131,23 @@
         }
     }
 
+    function destroyFace(oldFace, slideKey) {
+        if (oldFace === BACK) {
+            slideKey = slideKey || currentSlideKey();
+
+            var backFace = backFaceContainer[slideKey];
+            setTimeout(function () {
+                backFace.attr("src", "");
+            }, 800);
+        }
+    }
+
     function showSpinner() {
         $(".spinner").fadeIn("slow");
     }
 
     function hideSpinner() {
         $(".spinner").fadeOut("fast");
-    }
-
-    function destroyFace(oldFace, slideKey) {
-        if (oldFace === BACK) {
-            slideKey = slideKey || currentSlideKey();
-
-            var backFace = backFaceContainer[slideKey];
-            //console.log("destroyed backFace for", slideKey);
-        }
     }
 
     function changeAllFaces() {

@@ -66,6 +66,23 @@ span.red {
     top: 40%;
 }
 
+#avgrund-popup .close-popup {
+    position: absolute;
+    width: 24px;
+    height: 24px;
+    right: 0;
+    top: 0;
+    background: black;
+}
+
+#io50song {
+    width: 50%;
+    height: 500px;
+    left: 25%;
+    top: 10%;
+    margin: 0 auto;
+}
+
 .two-face {
     position: relative;
     -webkit-transform: rotateY(0deg);
@@ -129,6 +146,7 @@ p.smaller {
 span.code {
     border-bottom: 1px dotted black;
     font-weight: bold;
+    font-size: 80%;
 }
 
 ul.wider li {

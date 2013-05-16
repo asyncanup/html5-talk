@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<!-- saved from url=(0058)http://studio.html5rocks.com/samples/svg-puzzle/index.html -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=Edge;chrome=1">
+  <title>SVG Puzzle</title>
+  <style>
+    html, body {
+      margin: 0;
+      padding: 0;
+      height: 100%;
+      width: 100%;
+    }
+    body {
+      overflow: hidden;
+      display: -webkit-box;
+      -webkit-box-orient: horizontal;
+      -webkit-box-pack: center;
+      -webkit-box-align: center;
+      display: -moz-box;
+      -moz-box-orient: horizontal;
+      -moz-box-pack: center;
+      -moz-box-align: center;
+      display: box;
+      box-orient: horizontal;
+      box-pack: center;
+      box-align: center;
+    }
+    audio { display: none; }
+    .tile {
+      stroke: rgba(255,255,255,0.25);
+      stroke-width: 2;
+      fill-opacity: 0;
+    }
+    .tileNear { stroke: #090; }
+    .tileVeryNear { stroke: #0f0; }
+    .tileFit { stroke: none; }
+    #world { cursor: crosshair; }
+  </style>
+</head>
+<body style="background-image: -webkit-gradient(radial, 50% 50%, 0, 50% 50%, 500, from(rgb(228, 88, 39)), to(black)); background-position: initial initial; background-repeat: no-repeat no-repeat;">
+  <div id="world" oncontextmenu="return false;"></div>
+  <script src="./svg-puzzle_files/jquery.min.js"></script>
+  <script src="./svg-puzzle_files/jigsaw.js"></script>
+
+
+</body></html>

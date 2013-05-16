@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<!-- saved from url=(0055)http://www.htmlfivewow.com/demos/terminal/terminal.html -->
+<html style="height: 761px;"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="chrome=1">
+<title>HTML5 Terminal</title>
+<link rel="stylesheet" media="all" href="http://www.htmlfivewow.com/demos/terminal/terminal.css">
+<link rel="chrome-application-definition" href="http://www.htmlfivewow.com/demos/terminal/manifest.json">
+</head>
+<body>
+
+<aside class="help hidden">
+  <section>
+    <div>
+      <span onclick="toggleHelp()" id="close">x</span>
+      <h2>Keyboard shortcuts</h2>
+      <div class="shortcuts">
+        <p><strong>&lt;ctrl&gt; + s</strong> : Toggle CRT monitor flicker effect</p>
+        <p><strong>&lt;esc&gt;</strong> : toggle this help menu</p>
+      </div>
+    </div>
+    <div>
+      <h2>What is this?</h2>
+      <p>A Command-line terminal/shell running on top of HTML5 APIs.</p>
+      <p>By: Eric Bidelman &lt;ericbidelman@chromium.org&gt;</p>
+    </div>
+  </section>
+</aside>
+
+<!--<div class="crt top"></div>-->
+<div class="interlace" style="height: 761px;"></div>
+<div id="container" class=""><output><div>Welcome to HTML5 Terminal! (v1.0.0)</div>5/16/2013 5:18:30 AM<p>Documentation: type "help"</p><div>Screen flicker: on</div><div>Screen flicker: off</div><div>Screen flicker: on</div><div>Screen flicker: off</div></output><div id="input-line" class="input-line"><div class="prompt">$&gt;</div><div><input class="cmdline" autofocus=""></div></div></div>
+<!--<div class="crt bottom"></div>-->
+
+<script type="text/javascript" async="" src="./html5-terminal_files/ga.js"></script><script src="./html5-terminal_files/terminal.js"></script>
+<script>
+function toggleHelp() {
+  document.querySelector('.help').classList.toggle('hidden');
+  document.body.classList.toggle('dim');
+}
+
+(function() {
+  var term = new Terminal('container');
+  term.initFS(false, 1024 * 1024);
+
+  if (document.location.hash) {
+    var theme = document.location.hash.substring(1).split('=')[1];
+    term.setTheme(theme);
+  } else if (localStorage.theme) {
+    term.setTheme(localStorage.theme);
+  }
+
+  document.body.addEventListener('keydown', function(e) {
+    if (e.keyCode == 27) { // Esc
+      toggleHelp();
+      e.stopPropagation();
+      e.preventDefault();
+    }
+  }, false);
+
+  // Setup the DnD listeners for file drop.
+  document.body.addEventListener('dragenter', function(e) {
+    e.stopPropagation();
+    e.preventDefault();
+    this.classList.add('dropping');
+  }, false);
+
+  document.body.addEventListener('dragover', function(e) {
+    e.stopPropagation();
+    e.preventDefault();
+    e.dataTransfer.dropEffect = 'copy'; // Explicitly show this is a copy.
+  }, false);
+
+  document.body.addEventListener('dragleave', function(e) {
+   this.classList.remove('dropping');
+  }, false);
+  
+  document.body.addEventListener('drop', function(e) {
+    e.stopPropagation();
+    e.preventDefault();
+    this.classList.remove('dropping');
+    term.addDroppedFiles(e.dataTransfer.files);
+    term.output('<div>File(s) added!</div>');
+  }, false);
+})();
+</script>
+<script>
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-23384572-1']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+</script>
+
+<div class="vimiumReset vimiumHUD" style="right: 150px; opacity: 0; display: none;"></div></body></html>

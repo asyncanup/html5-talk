@@ -45,7 +45,7 @@
             <h2>HTML5 Features</h2>
             <h3>Revisited</h3>
             <br><br>
-            <h6>Anup Bishnoi</h4>
+            <h6>Anup Bishnoi</h6>
             <p>
               <small>anup.bishnoi@nagarro.com</small>
             </p>
@@ -89,7 +89,7 @@
               <li>View Manipulation</li>
               <li>Interactive User Input</li>
               <li>Rich Graphics</li>
-              <li>Hardware Access</li>
+              <li>File / Hardware Access</li>
               <li>State Management</li>
               <li>Offline Capability</li>
               <li>Realtime Communication</li>
@@ -105,11 +105,100 @@
 
         <section>
           <h3>DOM Access</h3>
+          <article>
+              <ul class="wider">
+                <li><span class="code">document.getElementsByClassName</span></li>
+                <li><span class="code">document.querySelector</span></li>
+                <li><span class="code">document.querySelectorAll</span></li>
+                <br>
+                <li><span class="code">element.className</span></li>
+                <br>
+                <li><span class="code">element.classList.add</span></li>
+                <li><span class="code">element.classList.remove</span></li>
+                <li><span class="code">element.classList.toggle</span></li>
+                <li><span class="code">element.classList.contains</span></li>
+              </ul>
+          </article>
+        </section>
+
+        <section>
+          <h3>Semantic Tags</h3>
           <div class="two-face">
             <div class="face front">
               <div class="change-face run" title="See Demo"></div>
               <ul class="wider">
-                <li>Yo</li>
+                <li><span class="code">header</span></li>
+                <li><span class="code">footer</span></li>
+                <li><span class="code">nav</span></li>
+                <li><span class="code">section</span></li>
+                <li><span class="code">article</span></li>
+                <li><span class="code">aside</span></li>
+                <li><span class="code">time</span></li>
+                <li><span class="code">menu</span></li>
+                <li><span class="code">meter</span></li>
+                <li><span class="code">progress</span></li>
+              </ul>
+            </div>
+            <div class="face back">
+              <div class="change-face go-back" title="Back to Slide"></div>
+              <div class="inner-container back">
+                <iframe class="content" data-src="images/progressbars.png">
+                </iframe>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section data-state="soothe">
+          <h2 class="section-head">Interactive User Input</h2>
+        </section>
+
+        <section>
+          <h3><a target="_blank"
+            href="http://www.html5rocks.com/en/tutorials/forms/html5forms/">Form Input</a></h3>
+          <div class="two-face">
+            <div class="face front">
+              <div class="change-face run" title="See Demo"></div>
+              <ul class="wider">
+                <li><span class="code">email</span></li>
+                <li><span class="code">date</span></li>
+                <li><span class="code">range</span></li>
+                <li><span class="code">search</span></li>
+                <li><span class="code">tel</span></li>
+                <li><span class="code">color</span></li>
+                <li><span class="code">number</span></li>
+                <li><span class="code">x-webkit-speech</span></li>
+              </ul>
+            </div>
+            <div class="face back">
+              <div class="change-face go-back" title="Back to Slide"></div>
+              <div class="inner-container back">
+                <iframe class="content" data-src="demos/form-input/index.html">
+                </iframe>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section>
+          <h3><a target="_blank"
+            href="https://developer.mozilla.org/en-US/docs/DragDrop/Drag_Operations"></a>Drag and Drop</h3>
+          <div class="two-face">
+            <div class="face front">
+              <div class="change-face run" title="See Demo"></div>
+              <ul class="wider">
+                <li><span class="code">draggable</span></li>
+                <li><span class="code">dragstart</span></li>
+                <li><span class="code">dragend</span></li>
+                <li><span class="code">drop</span></li>
+                <br>
+                <li><span class="code">dataTransfer.getData</span></li>
+                <li><span class="code">dataTransfer.setData</span></li>
+                <li><span class="code">dataTransfer.effectAllowed</span></li>
+                <br>
+                <li>
+                  <a href="javascript:void(0)" class="dragout" data-downloadurl="application/pdf:Chrome3DGlasses.pdf:http://static.googleusercontent.com/external_content/untrusted_dlcp/www.google.com/en/us/intl/en/landing/chrome/cadie/glasses.pdf" draggable="true">dataTransfer.files</a>
+                </li>
               </ul>
             </div>
             <div class="face back">
@@ -122,8 +211,435 @@
           </div>
         </section>
 
+        <section>
+          <h3><a target="_blank"
+            href="http://www.html5rocks.com/en/tutorials/getusermedia/intro/">User Media (Webcam)</a></h3>
+          <div class="two-face">
+            <div class="face front">
+              <div class="change-face run" title="See Demo"></div>
+              <ul class="wider">
+                <li><span class="code">navigator.getUserMedia</span></li>
+                <br>
+                <li><span class="code">capture=camera</span> (for snapshot)</li>
+                <li><span class="code">capture=camcorder</span> (for video)</li>
+                <br>
+                <li><span class="code">URL.createObjectURL(stream)</span></li>
+                <li><span class="code">URL.revokeObjectURL(stream)</span></li>
+                <br>
+                <li><span class="code">video.onloadedmetadata</span></li>
+              </ul>
+            </div>
+            <div class="face back">
+              <div class="change-face go-back" title="Back to Slide"></div>
+              <div class="inner-container back">
+                <iframe class="content" data-src="demos/webcam.html">
+                </iframe>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section>
+          <h3><a target="_blank"
+            href="http://updates.html5rocks.com/2012/09/Live-Web-Audio-Input-Enabled">User Media (Microphone)</a></h3>
+          <div class="two-face">
+            <div class="face front">
+              <div class="change-face run" title="See Demo"></div>
+              <ul class="wider">
+                <li><span class="code">navigator.getUserMedia({ audio: true })</span></li>
+                <br>
+                <li><span class="code">new webkitAudioContext()</span></li>
+                <li><span class="code">audioContext.createMediaStreamSource</span></li>
+                <br>
+                <li><span class="code">audioContext.createAnalyser</span></li>
+                <li><span class="code">audioContext.destination</span></li>
+                <br>
+                <li>Only on Chrome Canary</li>
+              </ul>
+            </div>
+            <div class="face back">
+              <div class="change-face go-back" title="Back to Slide"></div>
+              <div class="inner-container back">
+                <iframe class="content" data-src="demos/audio-recorder.html">
+                </iframe>
+              </div>
+            </div>
+          </div>
+        </section>
+
         <section data-state="soothe">
-          <h1>THE END</h1>
+          <h2 class="section-head">Rich Graphics</h2>
+        </section>
+
+        <section>
+          <h3><a target="_blank"
+            href="http://www.roughregister.com/public/talks/css"></a>CSS3!</h3>
+          <div class="two-face">
+            <div class="face front">
+              <div class="change-face run" title="See Demo"></div>
+              <ul class="wider">
+                <li><span class="code">transform</span></li>
+                <li><span class="code">translate</span></li>
+                <li><span class="code">transition</span></li>
+                <li><span class="code">perspective</span></li>
+                <li><span class="code">border-image</span></li>
+                <li><span class="code">display: flex</span></li>
+                <li><span class="code">gradient</span></li>
+                <li><span class="code">text-shadow</span></li>
+                <li><span class="code">box-shadow</span></li>
+              </ul>
+            </div>
+            <div class="face back">
+              <div class="change-face go-back" title="Back to Slide"></div>
+              <div class="inner-container back">
+                <iframe class="content" data-src="demos/superman/index.html">
+                </iframe>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section>
+          <h3><a target="_blank"
+            href="http://www.html5rocks.com/en/tutorials/speed/animations/">JS Animations</a></h3>
+          <div class="two-face">
+            <div class="face front">
+              <div class="change-face run" title="See Demo"></div>
+              <ul class="wider">
+                <li>Recursive <span class="code">setTimeout</span></li>
+                <li><span class="code">setInterval(1000 / 60)</span></li>
+                <li><span class="code">window.requestAnimationFrame</span></li>
+              </ul>
+              <br><br>
+              <p>Leave the best frame interval to the browser.</p>
+              <br>
+              <p><span class="code">requestAnimationFrame</span> provides access to<br>
+                the actual browser paint cycle.</p>
+              <br>
+              <p>Automatically stops on inactive tabs.</p>
+            </div>
+            <div class="face back">
+              <div class="change-face go-back" title="Back to Slide"></div>
+              <div class="inner-container back">
+                <iframe class="content" data-src="http://www.html5rocks.com/en/tutorials/speed/animations/post.html">
+                </iframe>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section>
+          <h3>Native Video</h3>
+          <div class="two-face">
+            <div class="face front">
+              <div class="change-face run" title="See Demo"></div>
+              <ul class="wider">
+                <li><span class="code">&lt;video&gt;</span></li>
+                <li><span class="code">autoplay</span></li>
+                <li><span class="code">controls</span></li>
+                <li><span class="code">loop</span></li>
+                <li><span class="code">poster</span></li>
+                <br>
+                <li><span class="code">&lt;track&gt;</span></li>
+                <li>Subtitle <span class="code">vtt</span> files<br>
+                  (Web Video Text Track)</li>
+              </ul>
+            </div>
+            <div class="face back">
+              <div class="change-face go-back" title="Back to Slide"></div>
+              <div class="inner-container back">
+                <iframe class="content" data-src="https://html5-demos.appspot.com/static/video/track/index.html">
+                </iframe>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section>
+          <h3><a target="_blank"
+            href="http://www.html5rocks.com/en/tutorials/webaudio/intro/">Native Audio</a></h3>
+          <div class="two-face">
+            <div class="face front">
+              <div class="change-face run" title="See Demo"></div>
+              <ul class="wider">
+                <li><span class="code">&lt;audio&gt;</span><br>
+                  Same options as <span class="code">&lt;video&gt;</span></li>
+                <li><span class="code">canPlayType</span></li>
+                <li><span class="code">autobuffer</span></li>
+                <li>Multiple <span class="code">&lt;source&gt;</span> support</li>
+                <br>
+                <li><span class="code">audioContext.decodeAudioData</span></li>
+                <li><span class="code">audioContext.createBuffer</span></li>
+              </ul>
+              <br><br>
+              <p><a href="http://waddell.appspot.com/static/io50lyrics.html" target="_blank">Lyrics</a>
+                for the HTML5 song</p>
+            </div>
+            <div class="face back">
+              <div class="change-face go-back" title="Back to Slide"></div>
+              <div class="inner-container back">
+                <iframe class="content" data-src="http://www.htmlfivewow.com/demos/audio-visualizer/index.html">
+                </iframe>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section>
+          <h3><a target="_blank"
+            href="https://www.udacity.com/course/cs255">Canvas 2D</a></h3>
+          <div class="two-face">
+            <div class="face front">
+              <div class="change-face run" title="See Demo"></div>
+              <ul class="wider">
+                <li><span class="code">canvas.getContext('2d')</span></li>
+                <li><span class="code">context.drawImage</span></li>
+                <li><span class="code">context.lineTo</span></li>
+                <li><span class="code">context.stroke</span></li>
+                <br>
+                <li><span class="code">canvas.toDataURL</span><br>(to save as image)</li>
+              </ul>
+              <br><br>
+              <p class="smaller">There is no DOM inside canvas,<br>
+                just the <span class="code">&lt;canvas&gt;</span> element</p>
+              <p class="smaller">All drawing actions on the canvas<br>overwrite the whole scene</p>
+            </div>
+            <div class="face back">
+              <div class="change-face go-back" title="Back to Slide"></div>
+              <div class="inner-container back">
+                <iframe class="content"
+                    data-src="http://www.roughregister.com/public/angryball/"></iframe>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section>
+          <h3><a target="_blank"
+            href="http://www.html5rocks.com/en/tutorials/webgl/webgl_fundamentals/">Webgl (Canvas 3D)</a></h3>
+          <div class="two-face">
+            <div class="face front">
+              <div class="change-face run" title="See Demo"></div>
+              <ul class="wider">
+                <li>Vertex Shaders<br>
+                  (provide the clipspace coordinates)</li>
+                <li>Fragment Shaders<br>
+                  (provide the colors)</li>
+              </ul>
+              <br><br>
+              <p class="smaller">Clipspace is simply the drawing boundaries</p>
+              <br>
+              <p class="smaller">The API is actually a 2D API,<br>
+                but the shaders allow you to do the math<br>
+                and make it look like 3D</p>
+              <br>
+              <p class="smaller">Learn about
+                <a target="_blank"
+                  href="https://developer.mozilla.org/en-US/docs/JavaScript/Typed_arrays">Typed Arrays</a>
+                first</p>
+            </div>
+            <div class="face back">
+              <div class="change-face go-back" title="Back to Slide"></div>
+              <div class="inner-container back">
+                <iframe class="content"
+                    data-src="http://www.htmlfivewow.com/demos/chrome-logo-particle/webglparticles.html">
+                </iframe>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section>
+          <h3><a target="_blank"
+            href="http://www.html5rocks.com/en/tutorials/svg/mobile_fundamentals/">Inline SVG</a></h3>
+          <div class="two-face">
+            <div class="face front">
+              <div class="change-face run" title="See Demo"></div>
+              <ul class="wider">
+                <li><span class="code">rect</span>,
+                  <span class="code">path</span>,
+                  <span class="code">line</span></li>
+                <li><span class="code">linearGradient</span>,
+                  <span class="code">animate</span>,
+                  <span class="code">text</span>, etc</li>
+                <li>SVG Elements become part of the DOM</li>
+                <li>Bind events normally</li>
+                <li>Apply CSS properties and transitions</li>
+                <li><span class="code">
+                    <a target="_blank"
+                      href="https://developer.mozilla.org/en-US/docs/SVG/Element/textPath">textPath</a>
+                  </span> to wrap text along arbitrary paths
+                </li>
+              </ul>
+              <br><br>
+              <p><span class="code">&lt;img&gt; src</span> can simply be
+                <span class="code">.svg</span> files,<br>
+                hence enabling SVG sprites</p>
+            </div>
+            <div class="face back">
+              <div class="change-face go-back" title="Back to Slide"></div>
+              <div class="inner-container back">
+                <iframe class="content"
+                    data-src="http://studio.html5rocks.com/samples/svg-puzzle/index.html">
+                </iframe>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section>
+          <h3>
+            <a target="_blank"
+              href="http://coding.smashingmagazine.com/2012/02/22/web-drawing-throwdown-paper-processing-raphael/">
+                Canvas vs SVG
+            </a>
+          </h3>
+          <div class="two-face">
+            <div class="face front">
+              <div class="change-face run" title="See Demo"></div>
+              <ul class="wider">
+                <li>Raw performance: <span class="code">Canvas</span></li>
+                <li>Rich user interaction: <span class="code">SVG</span></li>
+                <li>Better mobile support: <span class="code">Canvas</span></li>
+                <li>Better desktop support: <span class="code">SVG</span></li>
+                <li>Constant memory with high complexity: <span class="code">Canvas</span></li>
+                <li>Easier to style and manage in DOM: <span class="code">SVG</span></li>
+              </ul>
+              <br><br>
+              <p class="smaller"><span class="code">Canvas</span> for non-interactive animations / drawing</p>
+              <p class="smaller"><span class="code">SVG</span> for heavy user interaction (tapping, dragging)</p>
+              <p class="smaller">Hybrid Approach: Implement interactive areas with SVG,<br>
+                and animations with Canvas</p>
+            </div>
+            <div class="face back">
+              <div class="change-face go-back" title="Back to Slide"></div>
+              <div class="inner-container back">
+                <iframe class="content"
+                    data-src="http://www.roughregister.com/public/blackboard">
+                </iframe>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section data-state="soothe">
+          <h2 class="section-head">File / Hardware Access</h2>
+        </section>
+
+        <section>
+          <h3><a target="_blank"
+            href="http://www.html5rocks.com/en/tutorials/file/filesystem/">File System Access</a></h3>
+          <article class="mid">
+            <ul class="wider">
+              <li><span class="code">requestFileSystem</span></li>
+              <li><span class="code">fs.root.getFile</span></li>
+              <li><span class="code">file.createWriter</span></li>
+              <br>
+              <li><span class="code">writer.write</span></li>
+              <li><span class="code">writer.onerror</span></li>
+              <li><a target="_blank"
+                href="http://www.htmlfivewow.com/demos/terminal/terminal.html">Demo</a></li>
+            </ul>
+            <br><br>
+            <p class="smaller">A sandboxed file system is created for each domain.<br>
+              The user's file system is not accessible</p>
+          </article>
+        </section>
+
+        <section>
+          <h3><a target="_blank"
+            href="http://www.html5rocks.com/en/tutorials/geolocation/trip_meter/">Geo-Location</a></h3>
+          <div class="two-face">
+            <div class="face front">
+              <div class="change-face run" title="See Demo"></div>
+              <ul class="wider">
+                <li><span class="code">navigator.geolocation</span></li>
+                <li><span class="code">geolocation.getCurrentPosition</span></li>
+                <li><span class="code">geolocation.watchPosition</span></li>
+                <li><span class="code">geolocation.clearWatch</span></li>
+                <br>
+                <li><span class="code">position.coords</span></li>
+                <li><span class="code">coords.latitude</span></li>
+                <li><span class="code">coords.longitude</span></li>
+              </ul>
+              <br><br>
+              <p class="smaller">Phonegap's geolocation is essentially a polyfill,<br>
+                implementing the same API for devices<br>
+                that don't have it in HTML5</p>
+            </div>
+            <div class="face back">
+              <div class="change-face go-back" title="Back to Slide"></div>
+              <div class="inner-container back">
+                <iframe class="content"
+                    data-src="http://www.roughregister.com/public/duniya-dekho/">
+                </iframe>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section>
+          <h3><a target="_blank"
+            href="http://www.html5rocks.com/en/tutorials/device/orientation/">Device Orientation</a></h3>
+          <div class="two-face">
+            <div class="face front">
+              <div class="change-face run" title="See Demo"></div>
+              <ul>
+                <li><span class="code">deviceorientation</span> event on <span class="code">window</span></li>
+                <li><span class="code">event.alpha</span><br>
+                  Rotation along Z Axis:<br>
+                  Angle difference on the Compass
+                </li>
+                <li><span class="code">event.beta</span><br>
+                  Rotation along X Axis:<br>
+                  Front-to-back tilt angle
+                </li>
+                <li><span class="code">event.gamma</span><br>
+                  Rotation along Y Axis:<br>
+                  Left-to-right tilt angle
+                </li>
+              </ul>
+              <br><br>
+              <p class="smaller">Works without Phonegap, all in HTML5!</p>
+              <p class="smaller">Mozilla has a different implementation</p>
+            </div>
+            <div class="face back">
+              <div class="change-face go-back" title="Back to Slide"></div>
+              <div class="inner-container back">
+                <iframe class="content"
+                    data-src="http://slides.html5rocks.com/#slide-orientation">
+                </iframe>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section>
+          <h3><a target="_blank"
+            href="http://www.html5rocks.com/en/tutorials/device/orientation/">Device Motion</a></h3>
+          <article class="mid">
+            <ul>
+              <li><span class="code">devicemotion</span> event on <span class="code">window</span></li>
+              <li><span class="code">event.acceleration</span><br>
+                Separately provided along all 3 axes
+              </li>
+              <li><span class="code">event.accelerationIncludingGravity</span><br>
+                Some devices can only return this
+              </li>
+            </ul>
+              <br><br>
+              <p class="smaller">Works without Phonegap, in pure HTML5!</p><br>
+              <p class="smaller">Mozilla has a different implementation <br>
+                which is expected to merge in the future</p>
+          </article>
+        </section>
+
+        <section data-state="soothe">
+          <h2 class="section-head">State Management</h2>
+        </section>
+
+        <section data-state="soothe">
+          <h1 class="section-head">THE END</h1>
         </section>
 
       </div>
@@ -131,7 +647,6 @@
 
     <script src="lib/js/reveal.min.js"></script>
     <script src="lib/js/humane.min.js"></script>
-    <script src="lib/js/underscore.min.js"></script>
     <script src="lib/js/jquery.min.js"></script>
     <script src="lib/js/jquery.browser.js"></script>
 

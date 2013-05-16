@@ -1,0 +1,33 @@
+<html><head><link rel="stylesheet" href="reset.css"><link rel="stylesheet" href="demo-iframe.css"></head><body><style>
+  body { -webkit-perspective: 800px; }
+  @-webkit-keyframes buzz {
+    from { opacity: 1;   background: steelblue; }
+    50%  { opacity: 0.5; background: orange; }
+    to   { opacity: 1;   background: steelblue; }
+  }
+
+  .base, .roof {
+    -webkit-animation: buzz 1s infinite;
+  }
+</style>
+
+<div class="hut center-area">
+  <div class="bird-plane"></div>
+  <div class="left roof empty-box"></div>
+  <div class="right roof empty-box"></div>
+  <div class="base empty-box"></div>
+</div>
+
+<script>
+    window.rotateHut = function () {
+        var hut = document.querySelector(".center-area.hut");
+        var prevTransform = hut.style.WebkitTransform,
+            prevDegreesMatch = prevTransform && prevTransform.match(/rotateY\((\-?\d+)deg\)/),
+            prevDegrees = prevDegreesMatch && +prevDegreesMatch[1];
+        prevDegrees = prevDegrees || 0;
+        hut.style.WebkitTransition = "-webkit-transform 30s ease";
+        hut.style.WebkitTransform = "rotateY(" + (prevDegrees - 721) + "deg)";
+    };
+
+    setTimeout(window.rotateHut, 500);
+</script></body></html>
