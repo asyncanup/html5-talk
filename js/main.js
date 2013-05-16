@@ -18,7 +18,7 @@
     window.changeAllFaces = changeAllFaces;
 
     setupHandlers();
-    setupRemote();
+    setupRemote(true);
     setupReveal();
 
     function setupHandlers() {
@@ -81,17 +81,6 @@
             textarea.keyup(function () {
                 localStorage.setItem("store-local", textarea.val());
             });
-
-            // AppCache Switch
-            //var appCacheActive = localStorage.getItem("appCacheActive");
-            //$(".app-cache-switch").toggle(function () {
-                //appCacheActive = !appCacheActive;
-                //localStorage.setItem("appCacheActive", appCacheActive);
-            //});
-
-            //if (appCacheActive) {
-                
-            //}
         });
     }
 
