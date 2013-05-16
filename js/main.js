@@ -23,10 +23,12 @@
 
     function setupHandlers() {
         $(document).ready(function () {
+            // click play for awesomeness
             $(".two-face .face .change-face").click(function () {
                 changeFace();
             });
 
+            // save all the iframes for access later
             $(".two-face").each(function () {
                 var container = $(this),
                     slideKey = slideKeyFromBlock(container),
@@ -40,6 +42,7 @@
                 currentRotation[slideKey] = 0;
             });
 
+            // Only works perfectly on webkit (my bad)
             $("body").show();
             if ($.browser.chrome || $.browser.webkit) {
                 $("body > .reveal").fadeIn("slow");
@@ -47,7 +50,8 @@
                 logger.error("Please use a webkit browser (Chrome / Safari)");
             }
 
-            var files = document.querySelectorAll(".dragout"), i;
+            // Setup links that allow 'drag-to-download'
+            var files = document.querySelectorAll(".dragout-to-save"), i;
             function setDownloadUrl(file) {
                 file.addEventListener("dragstart", function (e) {
                     e.dataTransfer.setData("DownloadURL", this.dataset.downloadurl);
@@ -56,6 +60,38 @@
             for (i = 0; i < files.length; ++i) {
                 setDownloadUrl(files[i]);
             }
+
+            // Online | Offline
+            if (navigator.onLine) {
+                gotOnline();
+            } else {
+                gotOffline();
+            }
+            $(window).on("online", gotOnline);
+            $(window).on("offline", gotOffline);
+
+            function gotOnline() { $(".conn-status").addClass("online"); }
+            function gotOffline() { $(".conn-status").removeClass("online"); }
+
+            // localStorage textarea
+            var defaultStr = "This text is stored in window.localStorage",
+                textarea = $(".store-local"),
+                localStorage = window.localStorage;
+            textarea.val(localStorage.getItem("store-local") || defaultStr);
+            textarea.keyup(function () {
+                localStorage.setItem("store-local", textarea.val());
+            });
+
+            // AppCache Switch
+            //var appCacheActive = localStorage.getItem("appCacheActive");
+            //$(".app-cache-switch").toggle(function () {
+                //appCacheActive = !appCacheActive;
+                //localStorage.setItem("appCacheActive", appCacheActive);
+            //});
+
+            //if (appCacheActive) {
+                
+            //}
         });
     }
 

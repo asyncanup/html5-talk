@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="en">
+<html lang="en" manifest="html5-talk.appcache">
 
   <head>
     <meta charset="utf-8">
@@ -20,15 +20,6 @@
 
     <!-- My custom styles -->
     <link rel="stylesheet" href="css/main.css">
-
-    <!-- If the query includes "print-pdf", use the PDF print sheet -->
-    <script>
-      document.write( '<link rel="stylesheet" href="lib/css/print/' + ( window.location.search.match( /print-pdf/gi ) ? 'pdf' : 'paper' ) + '.css" type="text/css" media="print">' );
-    </script>
-
-    <!--[if lt IE 9]>
-    <script src="lib/js/html5shiv.js"></script>
-    <![endif]-->
   </head>
 
   <body>
@@ -60,11 +51,11 @@
             <br>
             <br>
             <h3 class="fragment">
-              <span class="red">HTML5</span>
+              <a href="http://www.roughregister.com/public/talks/html5"><span class="red bold">HTML5</span></a>
               ~=
-              <span class="red">HTML</span> +
-              <span class="red">JS</span> +
-              <span class="red">CSS</span>
+              <a href="http://www.roughregister.com/public/talks/html5"><span class="red">HTML</span></a> +
+              <a href="http://www.roughregister.com/public/talks/js"><span class="red bold">JS</span></a> +
+              <a href="http://www.roughregister.com/public/talks/css"><span class="red bold">CSS</span></a>
             </h3>
           </article>
         </section>
@@ -78,7 +69,7 @@
             It's not about impressive new features.
             </p>
             <br>
-            <p class="fragment"><span class="red">It's about making an App.</span></p>
+            <p class="fragment"><span class="red">It's about making an <span class="bold">App</span>.</span></p>
           </article>
         </section>
 
@@ -86,21 +77,19 @@
           <h3>An App needs</h3>
           <article class="mid">
             <ul class="wider">
-              <li>View Manipulation</li>
-              <li>Interactive User Input</li>
+              <li>Interactive User Interface</li>
               <li>Rich Graphics</li>
-              <li>File / Hardware Access</li>
-              <li>State Management</li>
               <li>Offline Capability</li>
+              <li>Hardware Access</li>
+              <li>State Management</li>
               <li>Realtime Communication</li>
-              <li>Accessibility</li>
               <li>Cross-Platform Support</li>
             </ul>
           </article>
         </section>
 
         <section data-state="soothe">
-          <h2 class="section-head">View Manipulation</h2>
+          <h2 class="section-head">Interactive User Input</h2>
         </section>
 
         <section>
@@ -125,7 +114,8 @@
           <h3>Semantic Tags</h3>
           <div class="two-face">
             <div class="face front">
-              <div class="change-face run" title="See Demo"></div>
+              <div class="change-face run"
+                title="Information Source - http://www.useragentman.com/blog/2012/01/03/cross-browser-html5-progress-bars-in-depth/"></div>
               <ul class="wider">
                 <li><span class="code">header</span></li>
                 <li><span class="code">footer</span></li>
@@ -149,16 +139,13 @@
           </div>
         </section>
 
-        <section data-state="soothe">
-          <h2 class="section-head">Interactive User Input</h2>
-        </section>
-
         <section>
           <h3><a target="_blank"
             href="http://www.html5rocks.com/en/tutorials/forms/html5forms/">Form Input</a></h3>
           <div class="two-face">
             <div class="face front">
-              <div class="change-face run" title="See Demo"></div>
+              <div class="change-face run"
+                title="Demo Source - http://www.html5rocks.com/en/tutorials/forms/html5forms/"></div>
               <ul class="wider">
                 <li><span class="code">email</span></li>
                 <li><span class="code">date</span></li>
@@ -185,7 +172,8 @@
             href="https://developer.mozilla.org/en-US/docs/DragDrop/Drag_Operations"></a>Drag and Drop</h3>
           <div class="two-face">
             <div class="face front">
-              <div class="change-face run" title="See Demo"></div>
+              <div class="change-face run"
+                title="Demo Source - http://html5demos.com/dnd-upload"></div>
               <ul class="wider">
                 <li><span class="code">draggable</span></li>
                 <li><span class="code">dragstart</span></li>
@@ -197,7 +185,9 @@
                 <li><span class="code">dataTransfer.effectAllowed</span></li>
                 <br>
                 <li>
-                  <a href="javascript:void(0)" class="dragout" data-downloadurl="application/pdf:Chrome3DGlasses.pdf:http://static.googleusercontent.com/external_content/untrusted_dlcp/www.google.com/en/us/intl/en/landing/chrome/cadie/glasses.pdf" draggable="true">dataTransfer.files</a>
+                  <a href="javascript:void(0)" class="dragout-to-save" draggable="true"
+                    data-downloadurl="application/pdf:Chrome3DGlasses.pdf:http://static.googleusercontent.com/external_content/untrusted_dlcp/www.google.com/en/us/intl/en/landing/chrome/cadie/glasses.pdf"
+                    title="Drag this link onto your Desktop">dataTransfer.files</a> (drag to Desktop)
                 </li>
               </ul>
             </div>
@@ -216,7 +206,8 @@
             href="http://www.html5rocks.com/en/tutorials/getusermedia/intro/">User Media (Webcam)</a></h3>
           <div class="two-face">
             <div class="face front">
-              <div class="change-face run" title="See Demo"></div>
+              <div class="change-face run"
+                title="Demo Source - https://html5-demos.appspot.com/static/getusermedia/record-user-webm.html"></div>
               <ul class="wider">
                 <li><span class="code">navigator.getUserMedia</span></li>
                 <br>
@@ -244,7 +235,8 @@
             href="http://updates.html5rocks.com/2012/09/Live-Web-Audio-Input-Enabled">User Media (Microphone)</a></h3>
           <div class="two-face">
             <div class="face front">
-              <div class="change-face run" title="See Demo"></div>
+              <div class="change-face run"
+                title="Demo Source - http://www.htmlfivewow.com/demos/audio-visualizer/index.html"></div>
               <ul class="wider">
                 <li><span class="code">navigator.getUserMedia({ audio: true })</span></li>
                 <br>
@@ -273,10 +265,11 @@
 
         <section>
           <h3><a target="_blank"
-            href="http://www.roughregister.com/public/talks/css"></a>CSS3!</h3>
+            href="http://www.roughregister.com/public/talks/css">CSS3!</a></h3>
           <div class="two-face">
             <div class="face front">
-              <div class="change-face run" title="See Demo"></div>
+              <div class="change-face run"
+                title="Demo Source - http://www.roughregister.com/public/talks/css (Anup Bishnoi)"></div>
               <ul class="wider">
                 <li><span class="code">transform</span></li>
                 <li><span class="code">translate</span></li>
@@ -288,6 +281,9 @@
                 <li><span class="code">text-shadow</span></li>
                 <li><span class="code">box-shadow</span></li>
               </ul>
+              <br><br>
+              <p>Don't miss the <a target="_blank"
+                href="http://www.roughregister.com/public/talks/css">CSS3 Talk</a></p>
             </div>
             <div class="face back">
               <div class="change-face go-back" title="Back to Slide"></div>
@@ -304,7 +300,8 @@
             href="http://www.html5rocks.com/en/tutorials/speed/animations/">JS Animations</a></h3>
           <div class="two-face">
             <div class="face front">
-              <div class="change-face run" title="See Demo"></div>
+              <div class="change-face run"
+                title="Demo Source - http://www.html5rocks.com/en/tutorials/speed/animations/post.html"></div>
               <ul class="wider">
                 <li>Recursive <span class="code">setTimeout</span></li>
                 <li><span class="code">setInterval(1000 / 60)</span></li>
@@ -332,7 +329,8 @@
           <h3>Native Video</h3>
           <div class="two-face">
             <div class="face front">
-              <div class="change-face run" title="See Demo"></div>
+              <div class="change-face run"
+                title="Demo Source - https://html5-demos.appspot.com/static/video/track/index.html"></div>
               <ul class="wider">
                 <li><span class="code">&lt;video&gt;</span></li>
                 <li><span class="code">autoplay</span></li>
@@ -360,7 +358,8 @@
             href="http://www.html5rocks.com/en/tutorials/webaudio/intro/">Native Audio</a></h3>
           <div class="two-face">
             <div class="face front">
-              <div class="change-face run" title="See Demo"></div>
+              <div class="change-face run"
+                title="Demo Source - http://www.htmlfivewow.com/demos/audio-visualizer/index.html"></div>
               <ul class="wider">
                 <li><span class="code">&lt;audio&gt;</span><br>
                   Same options as <span class="code">&lt;video&gt;</span></li>
@@ -390,7 +389,7 @@
             href="https://www.udacity.com/course/cs255">Canvas 2D</a></h3>
           <div class="two-face">
             <div class="face front">
-              <div class="change-face run" title="See Demo"></div>
+              <div class="change-face run" title="Demo Credits: Prateek Kumar Pradeep (NTEG HTML5)"></div>
               <ul class="wider">
                 <li><span class="code">canvas.getContext('2d')</span></li>
                 <li><span class="code">context.drawImage</span></li>
@@ -419,7 +418,8 @@
             href="http://www.html5rocks.com/en/tutorials/webgl/webgl_fundamentals/">Webgl (Canvas 3D)</a></h3>
           <div class="two-face">
             <div class="face front">
-              <div class="change-face run" title="See Demo"></div>
+              <div class="change-face run"
+                title="Demo Source - http://www.htmlfivewow.com/demos/chrome-logo-particle/webglparticles.html"></div>
               <ul class="wider">
                 <li>Vertex Shaders<br>
                   (provide the clipspace coordinates)</li>
@@ -454,7 +454,8 @@
             href="http://www.html5rocks.com/en/tutorials/svg/mobile_fundamentals/">Inline SVG</a></h3>
           <div class="two-face">
             <div class="face front">
-              <div class="change-face run" title="See Demo"></div>
+              <div class="change-face run"
+                title="Demo Source - http://studio.html5rocks.com/samples/svg-puzzle/index.html"></div>
               <ul class="wider">
                 <li><span class="code">rect</span>,
                   <span class="code">path</span>,
@@ -496,7 +497,7 @@
           </h3>
           <div class="two-face">
             <div class="face front">
-              <div class="change-face run" title="See Demo"></div>
+              <div class="change-face run" title="Demo Credits - Anshul Rastogi (NTEG HTML5)"></div>
               <ul class="wider">
                 <li>Raw performance: <span class="code">Canvas</span></li>
                 <li>Rich user interaction: <span class="code">SVG</span></li>
@@ -523,7 +524,132 @@
         </section>
 
         <section data-state="soothe">
-          <h2 class="section-head">File / Hardware Access</h2>
+          <h2 class="section-head">Offline Capability</h2>
+        </section>
+
+        <section>
+          <h3 class="conn-status">
+            <a target="_blank"
+              href="http://www.html5rocks.com/en/tutorials/offline/whats-offline/">
+                <span class="status-online">Online</span> | <span class="status-offline">Offline</span>
+            </a>
+          </h3>
+          <article>
+            <ul class="wider">
+              <li><span class="code">navigator.onLine</span></li>
+              <li><span class="code">online</span> event on <span class="code">window</span></li>
+              <li><span class="code">offline</span> event on <span class="code">window</span></li>
+            </ul>
+            <br><br>
+            <p>Two common approaches:</p>
+            <br>
+            <p class="smaller">In absence of connection,<br>
+              use <span class="code">localStorage</span> and sync up later</p>
+              OR
+            <p class="smaller">Always use offline storage in running app,<br>
+              sync up regularly with server</p>
+          </article>
+        </section>
+
+        <section>
+          <h3><a href="https://developer.mozilla.org/en/docs/DOM/Storage#localStorage">Web Storage</a></h3>
+          <article>
+            <ul class="wider">
+              <li><span class="code">window.localStorage</span> per domain</li>
+              <li><span class="code">localStorage.getItem</span></li>
+              <li><span class="code">localStorage.setItem</span></li>
+              <br>
+              <li><span class="code">window.sessionStorage</span> per session</li>
+              <li><span class="code">sessionStorage.getItem</span></li>
+              <li><span class="code">sessionStorage.setItem</span></li>
+            </ul>
+            <br><br>
+            <p class="smaller">This is a synchronous API.</p><br>
+            <textarea class="store-local"></textarea>
+          </article>
+        </section>
+
+        <section>
+          <h3><a href="http://www.html5rocks.com/en/tutorials/webdatabase/todo/">Web SQL</a></h3>
+          <div class="two-face">
+            <div class="face front">
+              <div class="change-face run" title="Demo Source - http://project.mahemoff.com/sql.html"></div>
+              <ul class="wider">
+                <li><span class="code">window.openDatabase</span></li>
+                <li><span class="code">database.transaction</span></li>
+                <li><span class="code">transaction.executeSql</span></li>
+              </ul>
+              <br><br>
+              <p class="smaller">Asynchronous API</p><br>
+              <p class="smaller">Storage Quota varies among browsers <br>
+                Mobile Safari has a 50 MB hard limit</p><br>
+              <p class="smaller">Available on Android and iPhone</p><br>
+              <p class="smaller">See this
+                <a target="_blank"
+                  href="http://labs.ft.com/2012/08/basic-offline-html5-web-app/">tutorial
+                </a> by <a target="_blank" href="http://labs.ft.com/">FT Labs</a>
+              </p>
+            </div>
+            <div class="face back">
+              <div class="change-face go-back" title="Back to Slide"></div>
+              <div class="inner-container back">
+                <iframe class="content"
+                    data-src="http://project.mahemoff.com/sql.html">
+                </iframe>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section>
+          <h3><a href="http://www.html5rocks.com/en/tutorials/offline/storage/">Indexed DB</a></h3>
+          <div class="two-face">
+            <div class="face front">
+              <div class="change-face run"
+                title="Demo Source - https://developer.mozilla.org/en-US/demos/detail/webcalcium-dnd"></div>
+              <ul class="wider">
+                <li><span class="code">window.indexedDB</span></li>
+                <li><span class="code">indexedDB.open</span></li>
+                <br>
+                <li><span class="code">db.createObjectStore</span></li>
+                <li><span class="code">db.objectStoreNames.contains</span></li>
+                <li><span class="code">db.deleteObjectStore</span></li>
+                <br>
+                <li>Asynchronous Key Value Store</li>
+                <li>Is supposed to replace Web SQL,<br>
+                  but no support on mobile yet</li>
+              </ul>
+            </div>
+            <div class="face back">
+              <div class="change-face go-back" title="Back to Slide"></div>
+              <div class="inner-container back">
+                <iframe class="content"
+                    data-src="https://developer.cdn.mozilla.net/media/uploads/demos/J/o/JoanC/308075fcdd122689ba8fffeb722acabd/webcalcium-dnd_1359213052_demo_package/index.html">
+                </iframe>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section>
+          <h3><a href="https://developer.mozilla.org/en/docs/HTML/Using_the_application_cache">
+            Application Cache
+          </a></h3>
+          <article>
+            <ul class="wider">
+              <li><span class="code">&lt;html manifest="html5-app.appcache"&gt;</span></li>
+              <li><span class="code">window.applicationCache</span></li>
+              <li><span class="code">applicationCache.status</span></li>
+              <li><span class="code">applicationCache.update()</span></li>
+              <li><span class="code">updateready</span> event</li>
+              <li><span class="code">applicationCache.swapCache()</span></li>
+              <br>
+              <li>Save application resources on the browser</li>
+              <li>Changing contents of manifest <br>
+              reloads all files in cache</li>
+              <li>Deleting manifest obsoletes cache</li>
+            </ul>
+          </article>
         </section>
 
         <section>
@@ -546,12 +672,16 @@
           </article>
         </section>
 
+        <section data-state="soothe">
+          <h2 class="section-head">Hardware Access</h2>
+        </section>
+
         <section>
           <h3><a target="_blank"
             href="http://www.html5rocks.com/en/tutorials/geolocation/trip_meter/">Geo-Location</a></h3>
           <div class="two-face">
             <div class="face front">
-              <div class="change-face run" title="See Demo"></div>
+              <div class="change-face run" title="Demo Credits - Dheeraj Lalwani (NTEG HTML5)"></div>
               <ul class="wider">
                 <li><span class="code">navigator.geolocation</span></li>
                 <li><span class="code">geolocation.getCurrentPosition</span></li>
@@ -583,7 +713,8 @@
             href="http://www.html5rocks.com/en/tutorials/device/orientation/">Device Orientation</a></h3>
           <div class="two-face">
             <div class="face front">
-              <div class="change-face run" title="See Demo"></div>
+              <div class="change-face run"
+                title="Demo Source - http://slides.html5rocks.com/#slide-orientation"></div>
               <ul>
                 <li><span class="code">deviceorientation</span> event on <span class="code">window</span></li>
                 <li><span class="code">event.alpha</span><br>
@@ -618,7 +749,7 @@
           <h3><a target="_blank"
             href="http://www.html5rocks.com/en/tutorials/device/orientation/">Device Motion</a></h3>
           <article class="mid">
-            <ul>
+            <ul class="wider">
               <li><span class="code">devicemotion</span> event on <span class="code">window</span></li>
               <li><span class="code">event.acceleration</span><br>
                 Separately provided along all 3 axes
@@ -636,6 +767,70 @@
 
         <section data-state="soothe">
           <h2 class="section-head">State Management</h2>
+        </section>
+
+        <section>
+          <h3><a target="_blank"
+            href="https://developer.mozilla.org/en-US/docs/Web/Guide/DOM/Manipulating_the_browser_history">
+            Pushin' n Poppin' History
+          </a></h3>
+          <article>
+            <ul class="wider">
+              <li><span class="code">history.state</span> contains the current state</li>
+              <li><span class="code">history.pushState</span> pushes a new state to stack <br>
+                (just like clicking a new url)</li>
+              <li><span class="code">history.replaceState</span> replaces the current state object</li>
+              <li><span class="code">onpopstate</span> fires on forward/back actions</li>
+              <li>No need to store trivial UI state in URL</li>
+              <li>Absolute-looking URLs, instead of hash-based <br>
+                Server component needed if URL can be bookmarked</li>
+            </ul>
+            <br><br>
+            <a target="_blank"
+              href="http://www.roughregister.com/public/find-the-treasure/"
+              title="Demo Credits - Prateek Kumar Pradeep (NTEG HTML5)">Demo</a>
+          </article>
+        </section>
+
+        <section data-state="soothe">
+          <h2 class="section-head">Resources</h2>
+        </section>
+
+        <section>
+          <h3>Demos</h3>
+          <article class="mid">
+            <ul>
+              <li><a href="https://developer.mozilla.org/en-US/demos/">Mozilla Demo Studio</a></li>
+              <li><a href="http://studio.html5rocks.com/">HTML5 Studio</a></li>
+              <li><a href="http://www.chromeexperiments.com/">Chrome Experiments</a></li>
+              <li><a href="http://html5demos.com/">HTML5 Demos by Remy Sharp</a></li>
+              <li><a href="https://html5-demos.appspot.com/">HTML5 Demos by Eric Bidelman</a></li>
+              <li><a href="http://www.htmlfivewow.com/">HTML5 Wow and How</a></li>
+              <li><a href="http://webaudiodemos.appspot.com/">Web Audio Demos</a></li>
+            </ul>
+          </article>
+        </section>
+
+        <section>
+          <h3>Learning Resources</h3>
+          <article>
+            <ul>
+              <li><a href="http://www.html5rocks.com/">HTML5 Rocks</a></li>
+              <li><a href="https://developer.mozilla.org/">Mozilla Developer Network</a></li>
+              <li><a href="http://docs.webplatform.org/">Web Platform Docs</a></li>
+              <li><a href="http://html5doctor.com/">HTML5 Doctor</a></li>
+              <li><a href="http://html5weekly.com/">HTML5 Weekly</a></li>
+              <li><a href="http://www.w3.org/TR/2008/WD-html5-diff-20080122/">Differences from HTML4</a></li>
+              <li><a href="http://media.smashingmagazine.com/wp-content/uploads/images/html5-cheat-sheet/html5-cheat-sheet.pdf">HTML5 Cheat Sheet (Print!)</a></li>
+              <li><a href="http://caniuse.com/">HTML5 Browser Compatibility</a></li>
+              <br>
+              <li>W3School is a lame duck. Keep away.</li>
+            </ul>
+          </article>
+        </section>
+
+        <section>
+          <h3></h3>
         </section>
 
         <section data-state="soothe">

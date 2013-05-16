@@ -1,0 +1,33 @@
+CACHE MANIFEST
+# v0.0.2
+
+CACHE:
+
+# CSS
+lib/css/reveal.css
+lib/css/theme/sky.css
+lib/css/jackedup.css
+css/main.css
+
+# JS
+lib/js/reveal.min.js
+lib/js/humane.min.js
+lib/js/jquery.min.js
+lib/js/jquery.browser.js
+js/main.js
+
+# Fonts
+css/fonts/OpenSans.woff 
+css/fonts/OpenSans-Bold.woff 
+css/fonts/OpenSans-Italic.woff 
+css/fonts/OpenSans-BoldItalic.woff 
+css/fonts/Quicksand-Regular.woff 
+css/fonts/Quicksand-Bold.woff 
+
+# Images
+images/nagarroAG.png
+images/html5logo.png
+images/spinner.gif
+images/glyphicons/glyphicons_220_play_button.png
+images/glyphicons/glyphicons_221_unshare.png
+images/progressbars.png
